@@ -34,6 +34,10 @@ export class PaymentRepository {
     return this.paymentModel.countDocuments(filter);
   }
 
+  async deletePayment(filter?: FilterQuery<Payment>): Promise<void> {
+    await this.paymentModel.deleteOne(filter);
+  }
+
   async getPaymentMethod(filter?: FilterQuery<PaymentMethod>): Promise<PaymentMethod> {
     return this.paymentMethodModel.findOne(filter);
   }

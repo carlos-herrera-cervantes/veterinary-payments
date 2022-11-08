@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mongo:
+    image: 'mongo:4.4'
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes:
+      - data:/usr/src/app
+    working_dir: /usr/src/app
+    user: ${MY_USER:-root}
+    depends_on:
+      - mongo
+    command: 'bash ./test.sh'
+volumes:
+  data:
