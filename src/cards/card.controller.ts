@@ -21,8 +21,9 @@ import { Pager, Pages } from '../types/pager.type';
 import { IPageable } from '../pager/pageable.interface';
 import { ClassicPageable } from '../pager/classic-pageable.implementation';
 import { CardQuantityGuard } from './guards/counter.guard';
+import { ApiConfig } from '../config/api.config';
 
-@Controller('/api/payments/v1/cards')
+@Controller(`${ApiConfig.BasePath}/v1/cards`)
 export class CardController {
   @Inject(CardRepository)
   private readonly cardService: CardRepository;

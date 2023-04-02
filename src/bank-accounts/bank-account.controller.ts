@@ -18,8 +18,9 @@ import { BankAccount } from './schemas/bank-account.schema';
 import { ClassicPageable } from '../pager/classic-pageable.implementation';
 import { Pager, Pages } from '../types/pager.type';
 import { IPageable } from 'src/pager/pageable.interface';
+import { ApiConfig } from '../config/api.config';
 
-@Controller('/api/payments/v1/bank-accounts')
+@Controller(`${ApiConfig.BasePath}/v1/bank-accounts`)
 export class BankAccountController {
   @Inject(BankAccountRepository)
   private readonly bankAccountRepository: BankAccountRepository;

@@ -5,8 +5,9 @@ import { Pager, Pages } from '../types/pager.type';
 import { PaymentCreatorSkeleton } from './dto/payment.dto';
 import { PaymentRepository } from './payment.repository';
 import { Payment } from './schemas/payment.schema';
+import { ApiConfig } from '../config/api.config';
 
-@Controller('api/payments/v1/transactions')
+@Controller(`${ApiConfig.BasePath}/v1/transactions`)
 export class PaymentController {
   @Inject(PaymentRepository)
   private readonly paymentRepository: PaymentRepository;

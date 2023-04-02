@@ -18,8 +18,9 @@ import { Pager, Pages } from '../types/pager.type';
 import { PaymentMethodCreatorSkeleton, PaymentMethodUpdaterSkeleton } from './dto/payment-method.dto';
 import { PaymentRepository } from './payment.repository';
 import { PaymentMethod } from './schemas/payment-method.schema';
+import { ApiConfig } from '../config/api.config';
 
-@Controller('api/payments/v1/methods')
+@Controller(`${ApiConfig.BasePath}/v1/methods`)
 export class PaymentMethodController {
   @Inject(PaymentRepository)
   private readonly paymentRepository: PaymentRepository;

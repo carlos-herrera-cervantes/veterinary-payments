@@ -5,10 +5,11 @@ import { CardModule } from './cards/card.module';
 import { DevolutionModule } from './devolutions/devolution.module';
 import { PagerModule } from './pager/pager.module';
 import { PaymentModule } from './payments/payment.module';
+import { MongoConfig } from './config/mongo.config';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.DEFAULT_DB),
+    MongooseModule.forRoot(MongoConfig.DefaultDb),
     CardModule,
     BankAccountModule,
     PagerModule,

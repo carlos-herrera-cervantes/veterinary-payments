@@ -19,8 +19,9 @@ import { Pager, Pages } from '../types/pager.type';
 import { DevolutionRepository } from './devolution.repository';
 import { DevolutionCreatorSkeleton, DevolutionUpdaterSkeleton } from './dto/devolution.dto';
 import { Devolution } from './schemas/devolution.schema';
+import { ApiConfig } from '../config/api.config';
 
-@Controller('api/payments/v1/devolutions')
+@Controller(`${ApiConfig.BasePath}/v1/devolutions`)
 export class DevolutionController {
   @Inject(DevolutionRepository)
   private readonly devolutionRepository: DevolutionRepository;
